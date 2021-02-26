@@ -151,7 +151,7 @@ public class TutorManager {
     
             // Unit Testing
             // assert(TM.getTutors().size()==4);
-            // assert(NM.TutorList.get(0).getName().equals("Rahul"));
+            // assert(TM.TutorList.get(0).getName().equals(""));
             
             // Write to the file from ArrayList 
             // TM.write(TM.fileName);
