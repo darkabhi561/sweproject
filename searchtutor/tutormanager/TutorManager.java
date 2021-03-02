@@ -8,8 +8,6 @@ public class TutorManager {
     
         public TutorManager(){
             this.TutorList = new ArrayList<Tutor>();
-            // init(this.fileName);
-            // init();
         }
     
         public List<Tutor> getTutors() {
@@ -26,11 +24,14 @@ public class TutorManager {
                 StringTokenizer st = null;
                 String oneLine = bufReader.readLine();
                 oneLine = bufReader.readLine();
-                // System.out.println(oneLine);
                 Tutor myTutor = null;
                 while(oneLine != null){
+                    // System.out.println(oneLine);
                     st = new StringTokenizer(oneLine, "|");
                     myTutor = new Tutor();
+                    if (st.countTokens() == 0){
+                        break;
+                    }
                     myTutor.setName(st.nextToken());
                     myTutor.setAddress(st.nextToken());
                     myTutor.setQualification(st.nextToken());
@@ -146,49 +147,52 @@ public class TutorManager {
             // Instantiation of Tutor Manager
             TutorManager TM = new TutorManager();
     
-            // Initialization of Tutor Manager ,i.e load data to the arrayList
+            // Initialization of Tutor Manager ,i.e load data to the arrayList of tutor
             TM.init(TM.fileName);
     
             // Unit Testing
-            // assert(TM.getTutors().size()==4);
-            // assert(TM.TutorList.get(0).getName().equals(""));
-            
-            // Write to the file from ArrayList 
-            // TM.write(TM.fileName);
-    
-            // Add Tutor of a user
-            // Tutor td = new Tutor();
-            // td.setName("Tutor11");
-            // td.setAddress("Kolkata");
-            // td.setQualification("BTech");
-            // td.setSubjectPrefer("Physics");
-            // TM.addTutor(td);
-    
-            // Display Tutor of a user
-            // Tutor td = new Tutor();
-            // td.setName("Tutor2");
-            // System.out.println(TM.displayTutor(td));
-    
-            // Update Tutor of a user
-            Tutor td = new Tutor();
-            td.setName("Tutor10");
-            td.setAddress("kanpur");
-            td.setQualification("MTech");
-            td.setSubjectPrefer("computerscience");
-            TM.updateTutor(td);
-    
-            // Delete Tutor of a user
-            // Tutor td = new Tutor();
-            // td.setName("Tutor1");
-            // TM.deleteTutor(td);
-            
+            assert(TM.getTutors().size()==13);
+            assert(TM.TutorList.get(0).getName().equals("Tutor1"));
+              
+
+            //  Filter tutor for Student
             // Student s = new Student();
             // s.setName("Abhishek");
             // s.setAddress("Mumbai");
             // s.setCls(10);
-            // s.setSearchrequriment("Physics");
+            // s.setSearchrequriment("Chemistry");
             // TM.matchTutor(s);
 
+            
+            // Add Tutor of a user
+            // Tutor td = new Tutor();
+            // td.setName("Tutor14");
+            // td.setAddress("Kolkata");
+            // td.setQualification("BTech");
+            // td.setSubjectPrefer("Math");
+            // td.setFees(10000);
+            // TM.addTutor(td);
+    
+            // Display Tutor of a user
+            // Tutor td = new Tutor();
+            // td.setName("Tutor11");
+            // System.out.println(TM.displayTutor(td));
+    
+            // // Update Tutor of a user
+            // Tutor td = new Tutor();
+            // td.setName("Tutor10");
+            // td.setAddress("Kolkata");
+            // td.setQualification("MTech");
+            // td.setSubjectPrefer("computerscience");
+            // td.setFees(2000);
+            // TM.updateTutor(td);
+    
+            // Delete Tutor of a user
+            // Tutor td = new Tutor();
+            // td.setName("Tutor13");
+            // TM.deleteTutor(td);
+            
+            
              
         }
     }
